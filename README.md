@@ -25,8 +25,8 @@ devtools::install_github("liuqivandy/mcCoordPath")
 <a name="Tutorial"/>
 
 # Tutorial
-- [Analyze thymus data](https://htmlpreview.github.io/?https://github.com/liuqivandy/MEcell/blob/main/Tutorial/CosMx.html)
-- [Analyze Crohn's Disease data](https://htmlpreview.github.io/?https://github.com/liuqivandy/MEcell/blob/main/Tutorial/Xenium.html)
+- [Analyze thymus data](https://htmlpreview.github.io/?https://github.com/liuqivandy/mcCoordPath/blob/main/Tutorial/Thymus.html)
+- [Analyze Crohn's Disease data](https://htmlpreview.github.io/?https://github.com/liuqivandy/mcCoordPath/blob/main/Tutorial/CD.html)
 
 
 <a name="Citation"/>
