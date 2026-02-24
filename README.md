@@ -25,8 +25,8 @@ devtools::install_github("liuqivandy/mcCoordPath")
 <a name="Tutorial"/>
 
 # Tutorial
-- [Analyze thymus data](https://htmlpreview.github.io/?https://github.com/liuqivandy/mcCoordPath/blob/main/Tutorial/Thymus.html)
-- [Analyze Crohn's Disease data](https://htmlpreview.github.io/?https://github.com/liuqivandy/mcCoordPath/blob/main/Tutorial/CD.html)
+- [Uncover pathways driving multicellular coordination in thymus development](https://htmlpreview.github.io/?https://github.com/liuqivandy/mcCoordPath/blob/main/Tutorial/Thymus.html)
+- [Reveal pan-cellular and cell-type-specific pathways contributing to Crohn's Disease progression](https://htmlpreview.github.io/?https://github.com/liuqivandy/mcCoordPath/blob/main/Tutorial/CD.html)
 
 
 <a name="Citation"/>
