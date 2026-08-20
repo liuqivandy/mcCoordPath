@@ -840,6 +840,23 @@ plot_lr_interactions <- function(
   V(g)$gene <- vertices$gene
   V(g)$score <- vertices$score
 
+  # --- Color Generator Helper Function (Pre-installed RColorBrewer) ---
+  get_qualitative_palette <- function(n) {
+    if (n <= 8) {
+      return(RColorBrewer::brewer.pal(n, "Dark2"))
+    } else if (n <= 12) {
+      return(RColorBrewer::brewer.pal(n, "Set3"))
+    } else {
+      # Combine distinct qualitative palettes (Set1 + Dark2 + Accent) for 13+ views
+      combined_pal <- c(
+        RColorBrewer::brewer.pal(9, "Set1"),
+        RColorBrewer::brewer.pal(8, "Dark2"),
+        RColorBrewer::brewer.pal(8, "Accent")
+      )
+      return(combined_pal[1:n])
+    }
+  }
+
   # --- Safe factor assignment for view with global_views ---
   if (!is.null(global_views)) {
     # Only keep views actually present in the graph
@@ -854,9 +871,7 @@ plot_lr_interactions <- function(
       if (length(palette) < n_views) palette <- rep(palette, length.out = n_views)
       view_colors <- setNames(palette[seq_len(n_views)], global_views)
     } else {
-      if (n_views <= 8) view_colors <- setNames(RColorBrewer::brewer.pal(n_views, "Dark2"), global_views)
-      else if (n_views <= 12) view_colors <- setNames(RColorBrewer::brewer.pal(n_views, "Set3"), global_views)
-      else view_colors <- setNames(viridis::viridis(n_views, option = "D"), global_views)
+      view_colors <- setNames(get_qualitative_palette(n_views), global_views)
     }
 
     # Use only colors for present views
@@ -870,9 +885,7 @@ plot_lr_interactions <- function(
       if (length(palette) < n_views) palette <- rep(palette, length.out = n_views)
       used_colors <- setNames(palette[seq_len(n_views)], present_views)
     } else {
-      if (n_views <= 8) used_colors <- setNames(RColorBrewer::brewer.pal(n_views, "Dark2"), present_views)
-      else if (n_views <= 12) used_colors <- setNames(RColorBrewer::brewer.pal(n_views, "Set3"), present_views)
-      else used_colors <- setNames(viridis::viridis(n_views, option = "D"), present_views)
+      used_colors <- setNames(get_qualitative_palette(n_views), present_views)
     }
   }
 
@@ -906,9 +919,6 @@ plot_lr_interactions <- function(
 
   return(p)
 }
-
-
-
 
 
 #######
